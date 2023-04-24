@@ -485,8 +485,11 @@ void Command::completeFront(FireFront* ff){
 }
 
 int Command::stepSimulation(const string& arg, size_t& numTabs){
-    if (domain == 0) return normal;
-    
+    if (domain == 0){
+		cout << "Fire domain is missing, exiting from Command::stepSimulation" << endl;
+		return normal;
+	}
+
 	double dt = getFloat("dt",arg);
 	endTime = startTime + dt;
 	ostringstream etime;

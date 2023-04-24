@@ -1,6 +1,6 @@
 /*
 
-Copyright (C) 2012 ForeFire Team, SPE, UniversitŽ de Corse.
+Copyright (C) 2012 ForeFire Team, SPE, Universitï¿½ de Corse.
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -45,7 +45,7 @@ void Simulator::goTo(const double& endTime){
 	while ( schedule->getTime() <= endTime + EPSILONT ) {
 		FFEvent* upEvent = schedule->getUpcomingEvent();
 		if ( !upEvent ){
-		   cout << "no more events !!"<<endl;
+		   cout << "Simulator::goTo has no more events to process!"<<endl;
 		   return;
 		}
 
@@ -67,6 +67,7 @@ void Simulator::goTo(const double& endTime){
 		schedule->insert(upEvent);
 
 	}
+	cout << "Exiting Simulator::goTo"<<endl;
 }
 
 

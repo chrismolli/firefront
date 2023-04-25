@@ -1008,19 +1008,33 @@ int Command::loadData(const string& arg, size_t& numTabs){
 }
 
 int Command::clear(const string& arg, size_t& numTabs){
-	delete currentSession.fd;
-	delete currentSession.outStrRep;
-	delete currentSession.sim;
-	delete currentSession.params;
+	cout << "Clearing session!" << endl;
+	if (currentSession.fd != nullptr) {
+        delete currentSession.fd;
+        currentSession.fd = nullptr;
+    }
+    if (currentSession.outStrRep != nullptr) {
+        delete currentSession.outStrRep;
+        currentSession.outStrRep = nullptr;
+    }
+	if (currentSession.ff != nullptr) {
+        delete currentSession.ff;
+        currentSession.ff = nullptr;
+    }
+    if (currentSession.sim != nullptr) {
+        delete currentSession.sim;
+        currentSession.sim = nullptr;
+    }
+    if (currentSession.params != nullptr) {
+        delete currentSession.params;
+        currentSession.params = nullptr;
+    }
 	return normal;
 }
 
 int Command::quit(const string& arg, size_t& numTabs){
 	cout<<"*** QUITTING FOREFIRE, GOODBYE ***"<<endl;
-	delete currentSession.fd;
-	delete currentSession.outStrRep;
-	delete currentSession.sim;
-	delete currentSession.params;
+	clear(arg, numTabs);
 	exit(0);
 	return normal;
 }

@@ -43,9 +43,13 @@ void setDouble(char* name, double val);
 void getDoubleArray(char* name, double** outA, int* outNI, int* outNJ, int* outNK);
 void getDoubleArray(char* name, double t, double** outA, int* outNI, int* outNJ, int* outNK);
 double getDouble(char* name );
-void setString(char* name, char* val);
+void setString(char* name, char* val); 
 std::string getString(char* name );
 void clear(void);
+
+Command* pyxecutor;
+Command::Session* session ;
+SimulationParameters* params ;
 
 };
 

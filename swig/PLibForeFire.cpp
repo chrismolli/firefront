@@ -25,11 +25,11 @@ using namespace std;
 using namespace libforefire;
 #include <iostream>
 
-
+/*
 Command* pyxecutor;
 Command::Session* session ;
 SimulationParameters* params ;
-
+*/
 
 
 PLibForeFire::PLibForeFire(){

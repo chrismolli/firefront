@@ -38,7 +38,9 @@ PLibForeFire::PLibForeFire(){
 	params = session->params;
 }
 
-
+PLibForeFire::~PLibForeFire(){
+	delete pyxecutor;
+}
 
 void PLibForeFire::createDomain( int id
 		,  int year,  int month

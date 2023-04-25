@@ -17,12 +17,14 @@ typedef struct _SignedIntBuf
 #include <CLibForeFire.h>
 
 using namespace std;
+using namespace libforefire;
 
 class PLibForeFire {
 
 
 public:
 PLibForeFire();
+~PLibForeFire();
 std::string execute(char *);
 void createDomain( int id
 		,  int year,  int month

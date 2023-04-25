@@ -1010,22 +1010,27 @@ int Command::loadData(const string& arg, size_t& numTabs){
 int Command::clear(const string& arg, size_t& numTabs){
 	cout << "Clearing session!" << endl;
 	if (currentSession.fd != nullptr) {
+		cout << "Clearing domain!" << endl;
         delete currentSession.fd;
         currentSession.fd = nullptr;
     }
     if (currentSession.outStrRep != nullptr) {
+		cout << "Clearing outStrRep!" << endl;
         delete currentSession.outStrRep;
         currentSession.outStrRep = nullptr;
     }
 	if (currentSession.ff != nullptr) {
+		cout << "Clearing firefront!" << endl;
         delete currentSession.ff;
         currentSession.ff = nullptr;
     }
     if (currentSession.sim != nullptr) {
+		cout << "Clearing sim!" << endl;
         delete currentSession.sim;
         currentSession.sim = nullptr;
     }
     if (currentSession.params != nullptr) {
+		cout << "Clearing params!" << endl;
         delete currentSession.params;
         currentSession.params = nullptr;
     }

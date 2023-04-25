@@ -45,6 +45,7 @@ void getDoubleArray(char* name, double t, double** outA, int* outNI, int* outNJ,
 double getDouble(char* name );
 void setString(char* name, char* val);
 std::string getString(char* name );
+void clear(void);
 
 };
 

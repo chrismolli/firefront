@@ -1,6 +1,6 @@
 /*
 
-Copyright (C) 2012 ForeFire Team, SPE, UniversitŽ de Corse.
+Copyright (C) 2012 ForeFire Team, SPE, Universitï¿½ de Corse.
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -202,5 +202,34 @@ void PLibForeFire::getDoubleArray(char* name, double t, double** outA, int* outN
 		*outNK = 0;
 		*outA =  NULL;
 		return ;
+}
+
+void PLibForeFire::clear(void){
+	cout << "Clearing session from SWIG!" << endl;
+	if (session->fd != nullptr) {
+		cout << "Clearing domain!" << endl;
+        delete session->fd;
+        session->fd = nullptr;
+    }
+    if (session->outStrRep != nullptr) {
+		cout << "Clearing outStrRep!" << endl;
+        delete session->outStrRep;
+        session->outStrRep = nullptr;
+    }
+	if (session->ff != nullptr) {
+		cout << "Clearing firefront!" << endl;
+        delete session->ff;
+        session->ff = nullptr;
+    }
+    if (session->sim != nullptr) {
+		cout << "Clearing sim!" << endl;
+        delete session->sim;
+        session->sim = nullptr;
+    }
+    if (session->params != nullptr) {
+		cout << "Clearing params!" << endl;
+        delete session->params;
+        session->params = nullptr;
+    }
 }
 
